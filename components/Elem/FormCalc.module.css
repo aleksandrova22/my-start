@@ -1,0 +1,47 @@
+.calc {
+    margin: 30px;
+   
+    border: 1px solid green;
+    text-align: center;
+    width: 800px;
+    min-height: min-content;
+    /* flex-wrap: wrap; */
+
+    & button {
+
+        height: 80px;
+        width: 220px;
+        border: 2px solid green;
+        border-radius: 5px;
+        font-size: small;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px;
+    }
+
+
+    & input {
+        height: 40px;
+        width: 220px;
+        border: 2px solid green;
+        border-radius: 5px;
+        text-align: center;
+        color: green;
+        font-size: large;
+    }
+
+    & select {
+        height: 40px;
+        width: 220px;
+        border: 2px solid green;
+        border-radius: 5px;
+        text-align: center;
+
+    }
+    & h3 {background-color: green;}
+
+}
+
+/* .lighting {
+    background-color: green;
+} */

@@ -1,42 +1,77 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  margin: 0;
 }
+h1{ color: rgb(29, 75, 9);
+margin: 5px;
+padding: 10px;}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+header {
+  background-color: lightgreen;
+  /* display: flex; */
+  /* justify-content: space-evenly; */
+  height: 70px;
+  font-size: large;
+  padding: 10px;
+
+  & div {
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+    font-size: x-large;
+    border-radius: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  }
+
+  & nav ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    & li {
+      padding: .5em;
+      border-radius: .5em .5em 0 0;
+      flex: 1 0;
+      text-align: center;
+
+      &.active {
+        background-color: green;
+      }
+
+      &:hover {
+        background-color: greenyellow;
+      }
+    }
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+
+.logo {
+  height: 3em;
+  padding: 1em;
+  will-change: filter;
+  transition: filter 300ms;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: logo-spin infinite 20s linear;
+  border-radius: 50%;
+
+  &:hover {
+    filter: drop-shadow(0 0 10em #646cffaa);
+
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  to {
+    transform: rotate(360deg);
   }
 }
