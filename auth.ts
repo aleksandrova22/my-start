@@ -6,6 +6,7 @@ import { PrismaClient } from "@prisma/client";
 import MailRu from "next-auth/providers/mailru";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
+import VK from "next-auth/providers/vk";
 
 const prismaDB = new PrismaClient();
 
@@ -17,6 +18,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     GitHub,
     Google,
     MailRu,
+    VK,
 
     CredentialsProvider({
       // The name to display on the sign in form (e.g. 'Sign in with...')
