@@ -14,6 +14,7 @@ datasource db {
 }
 
 
+
 model Menu {
   id          Int     @id @default(autoincrement())
   name        String
@@ -102,3 +103,4 @@ model Authenticator {
  
   @@id([userId, credentialID])
 }
+
