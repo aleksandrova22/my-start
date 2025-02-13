@@ -8,18 +8,14 @@ padding: 10px;}
 
 header {
   background-color: lightgreen;
-  /* display: flex; */
-  /* justify-content: space-evenly; */
-  height: 70px;
   font-size: large;
   padding: 10px;
 
   & div {
+    display: flex;
+    justify-content: flex-end;
     color: green;
-    font-style: italic;
-    font-weight: bold;
-    font-size: x-large;
-    border-radius: 50%;
+    padding: 3px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
   }

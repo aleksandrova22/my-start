@@ -9,18 +9,18 @@ export const CalcBJU = memo(function ({ children }) {
     if (!valueGender || !valueTarget || Age === '', Height === '', Weight === '') return <span>Пожалуйста заполните все поля</span>
     if (0 > Age || 1 > Height || 1 > Weight) return <span>Пожалуйста введите корректные данные</span>
     if (valueGender === 'M') BJU = Math.round((bov(Age, Height, Weight) + 5) * kk(valueLifeStyle))
-   if (valueGender === 'W') BJU = Math.round((bov(Age, Height, Weight) - 161) * kk(valueLifeStyle));
+    if (valueGender === 'W') BJU = Math.round((bov(Age, Height, Weight) - 161) * kk(valueLifeStyle));
     const recomend = variation(Weight, BJU, valueTarget);
     return <>
         <div  >
-        <h3> Рекомендуемая суточная норма калорий:</h3>
-        <div>{BJU} Ккал</div>
-        <h3> Ориентир для сброса / набора веса:</h3>
-        <p>Калории:{recomend.BJU} </p>
-        <p>Суточная норма белка: {recomend.b} грамм</p>
-        <p>Суточная норма жиров: {recomend.j} грамм</p>
-        <p>Суточная норма углеводов: {recomend.u} грамм</p>
-    </div>
+            <h3> Рекомендуемая суточная норма калорий:</h3>
+            <div>{BJU} Ккал</div>
+            <h3> Ориентир для сброса / набора веса:</h3>
+            <p>Калории:{recomend.BJU} </p>
+            <p>Суточная норма белка: {recomend.b} грамм</p>
+            <p>Суточная норма жиров: {recomend.j} грамм</p>
+            <p>Суточная норма углеводов: {recomend.u} грамм</p>
+        </div>
     </>;
 });
 

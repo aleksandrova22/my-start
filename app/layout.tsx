@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
-
-
+import { ServerComponentAccountButton } from "@/components/account-button-rsc";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-      <main>
-          <h2>⚡App router</h2>
-        {children}
+        <Header> 
+          <ServerComponentAccountButton />
+        </Header>
+        <main>
+          {children}
         </main>
       </body>
     </html>

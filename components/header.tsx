@@ -1,19 +1,24 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ReactNode } from 'react';
 
 const
   pages = [
-    { href: '/', title: 'Home' },
-    { href: '/product', title: 'Product' },
-    { href: '/contact', title: 'Contact' }
+    { href: '/', title: 'Домашняя' },
+    { href: '/product', title: 'Меню' },
+    { href: '/account', title: 'Рецепты' },
+    { href: '/contact', title: 'Контакты' },
+   
   ];
 
-export default function Header() {
+export default function Header({ children = null }: { children: ReactNode}) {
   const pathname = usePathname();
   console.log(pathname)
   return <header>
+    {children}
     <nav>
+   
       <ul>
         {pages.map(({ href, title }) =>
           <li key={href} className={pathname === href ? 'active' : ''}>

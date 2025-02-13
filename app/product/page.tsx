@@ -1,55 +1,15 @@
-import { signIn, signOut, auth } from "@/auth";
+//import { signIn, signOut, auth } from "@/auth";
+import { prisma } from '@/prisma/prisma';
+import { MealList } from '@/components/Elem/meal-list';
 
-export default function Page1() {
-  console.log('/app/appMenu/page.jsx');
+//без авторизации
+export default async function PageMenu() {
+  const
+    meals = await prisma.meal.findMany();
+
   return <>
-    <h2>Menu</h2> 
-    <Account />
+    <h2>Выберите прием пищи</h2>
+    <MealList meals={meals} />
   </>
 }
 
-async function Account() {
-  const session = await auth();
-
-  if (session?.user) {
-    // const {user} = session;
-    return (
-      <>
-        Signed in as {session.user?.name} ({session.user?.email}) <br />
-        {session.user?.image && <img src={session.user?.image} style={{ width: '50px', borderRadius: '50%' }} />}<br />
-        <SignOut />
-      </>
-    )
-  }
-  return <>
-    <SignIn />
-  </>
-
-}
-
-
-function SignIn() {
-  return (
-    <form
-      action={async () => {
-        "use server"
-        await signIn()
-      }}
-    >
-      <button type="submit">Sign in</button>
-    </form>
-  )
-}
-
-function SignOut() {
-  return (
-    <form
-      action={async () => {
-        "use server"
-        await signOut()
-      }}
-    >
-      <button type="submit">Sign Out</button>
-    </form>
-  )
-}

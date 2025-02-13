@@ -1,0 +1,13 @@
+.avatar {
+    aspect-ratio: 1/1;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .input {
+    display: flex;
+    justify-content: flex-end;
+    color: green;
+  }
+
+  .button {margin: 5px; border-radius: 20%;}

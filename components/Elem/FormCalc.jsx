@@ -15,10 +15,8 @@ function DataForm({ columns, values, setValues }) {
                         onInput={event => setValues(prev => prev.with(i, event.target.value))} />
                     : ''}
             </div>)}  <br />
-
     </div>;
 }
-
 
 export function FormCalc() {
     'use client';
