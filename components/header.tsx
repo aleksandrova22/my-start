@@ -7,7 +7,8 @@ const
   pages = [
     { href: '/', title: 'Домашняя' },
     { href: '/product', title: 'Меню' },
-    { href: '/account', title: 'Рецепты' },
+    { href: '/menus', title: 'Рецепты' },
+    { href: '/account', title: 'Рецепты-test' },
     { href: '/contact', title: 'Контакты' },
    
   ];

@@ -1,23 +1,23 @@
-
 import { auth } from '@/auth';
-import { GetUsers } from '@/components/Elem/users';
-//import {ServerSession } from '@/components/my-account';
+import { DemoUsers } from '@/components/Elem/demo-users';
+import { getRole } from '@/lib/role';
 import { prisma } from '@/prisma/prisma';
 
 export default async function Page2() {
   const
-    session = await auth();
-  if (!session?.user) return <div>Список всех пользователей будет доступен после авторизации</div>;
-
-  const
+    session = await auth(),
+    role = await getRole(session),
+    // if (!session?.user) return <div>Нужно войти как адми</div>;
     users = await prisma.user.findMany();
-  if ((session.user.email = 'lialia1986@mail.ru') || (session.user.email = 'materikin@gmail.com'))
-
+  if ((role === 'admin') && (session?.user)) {
     return <>
       <h1>Админ</h1>
-          <hr />
-          <h3>Перечень всех пользователей - доступен для админов</h3>
+      <hr />
+      <h3>Перечень всех пользователей:</h3>
       {/* Server session = <ServerSession /> */}
-      <div> <GetUsers users={users} /> </div>
+      <div> <DemoUsers users={users} /> </div>
+      {/* <div> <GetUsers role={role} /> </div> */}
     </>
+  }
+  return <div>Нужна авторизация администратора</div>
 }
