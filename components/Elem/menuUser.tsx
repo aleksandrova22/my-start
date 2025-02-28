@@ -4,7 +4,7 @@ import classes from './meal-list.module.css';
 
 
 
-export function MenuUser({ menuMeal }: { menuMeal: Menu[] }) {
+export function MenuUser({ menuMeal }: { menuMeal: Menu[] | null }) {
   return <ul className={classes.meal}>
         {menuMeal?.map(menuMeal => <li key={menuMeal.id}><p>{menuMeal.name}</p><p>КБЖУ:{menuMeal.energy}</p>
               <Image src={"/" + menuMeal?.photo} width={200} height={200} alt="Picture of the author" />

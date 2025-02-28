@@ -1,8 +1,9 @@
-import type { Menu } from '@prisma/client';
-import Image from 'next/image';
-import classes from './meal-list.module.css';
+// import type { Menu } from '@prisma/client';
+// import Image from 'next/image';
+// import classes from './meal-list.module.css';
 
-async function addMenu(event: Event, needReload: () => void) {
+async function addMenu(event: Event, needReload: () => void)
+ {
   event.preventDefault();
   const
     form = event.target as HTMLFormElement,
@@ -17,10 +18,10 @@ async function addMenu(event: Event, needReload: () => void) {
   needReload();
 }
 
-export function MenuAdmin({ menuMeal, needReload }: { menuMeal: Menu[], needReload: () => void }) {
+export function MenuAdmin({needReload}: {needReload: () => void} ) {
   return <>
     <h3>Добавить новое блюдо:</h3>
-    <form onSubmit={evt => addMenu(evt, needReload)}>
+    <form onSubmit={evt  => addMenu(evt, needReload)}>
       Название <input type="string" name="name" />
       <br />
       Калорийность <input type="number" name="energy" />
@@ -30,7 +31,7 @@ export function MenuAdmin({ menuMeal, needReload }: { menuMeal: Menu[], needRelo
       Фото<input type="string" name="photo" /><br />
       Рецепт<input type="string" name="Recipe" /><br />
       Номер приема пищи<input type="number" min="1" max="4" name="mealId" /><br />
-      <button type="submit">add</button>
+      <button type="submit">Добавить новое блюдо</button>
     </form>
 
     {/* <ul className={classes.meal}>

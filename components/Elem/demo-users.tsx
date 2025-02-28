@@ -1,4 +1,6 @@
 import type { User } from '@prisma/client';
+import Image from 'next/image';
+
 
 
 export function DemoUsers({ users }: { users: User[] }) {
@@ -7,7 +9,7 @@ export function DemoUsers({ users }: { users: User[] }) {
                   {user.name}<br />
                   {user.email}<br />
                   {user.role}<br />
-                    <img src={user.image} width={50} height={50} /> 
+                  <Image src={"/" + user?.image} width={200} height={200} alt="Picture of the author" />
             </li>)}
       </ul>
 

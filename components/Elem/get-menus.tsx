@@ -41,9 +41,9 @@ export function GetMenus({ role }: { role: Role }) {
 
     return <>
  
-        {'admin' === role && <MenuAdmin menuMeal={menuMeal} needReload={() => setNeedReload(x => 1 + x)} />}
-        {('user' === role || 'admin' === role) && <MenuUser menuMeal={menuMeal} />}
-         {/* <MenuUser menuMeal={menuMeal} /> */}
+        {'admin' === role && <MenuAdmin needReload={() => setNeedReload(x => 1 + x)} />}
+        {/* {('user' === role || 'admin' === role) && <MenuUser menuMeal={menuMeal} />} */}
+         <MenuUser menuMeal={menuMeal} />
 
     </>
 }
