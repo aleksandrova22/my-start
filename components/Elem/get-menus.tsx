@@ -6,16 +6,15 @@ import { MenuUser } from './menuUser';
 import { MenuAdmin } from './menuAdmin';
 
 
-
 async function fetcher(url: string) {
     const response = await fetch(url);
     if (!response.ok) throw new Error(response.statusText);
     return response.json();
 }
 
-export function GetMenus({ role }: {role: Role}) {
+export function GetMenus({ role }: { role: Role }) {
     const
-        [error, setError] = useState(null),
+        [error, setError] = useState<any>(null),
         [menuMeal, setMenuMeal] = useState(null),
         [loading, setLoading] = useState(true),
         [needReload, setNeedReload] = useState(0);
@@ -28,10 +27,10 @@ export function GetMenus({ role }: {role: Role}) {
                 setMenuMeal(result);
                 setError(null);
                 setLoading(false);
-            } catch (error) {
+            } 
+            catch (error) {
                 console.error('error=', error);
                 setError(error);
-               
             }
         }
     }, [needReload]);
@@ -41,9 +40,10 @@ export function GetMenus({ role }: {role: Role}) {
 
 
     return <>
-            
-        {'admin' === role && <MenuAdmin  menuMeal={menuMeal} needReload={() => setNeedReload(x => 1 + x)} />}
-        {'user' === role &&  <MenuUser menuMeal={menuMeal} /> }
+ 
+        {'admin' === role && <MenuAdmin menuMeal={menuMeal} needReload={() => setNeedReload(x => 1 + x)} />}
+        {('user' === role || 'admin' === role) && <MenuUser menuMeal={menuMeal} />}
+         {/* <MenuUser menuMeal={menuMeal} /> */}
 
     </>
 }

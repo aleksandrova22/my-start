@@ -9,8 +9,8 @@ import { getRole } from '@/lib/role';
 export async function GET(/* request: NextRequest */) {
   // console.log('request=', request);
   const
-    session = await auth(),
-    role = await getRole(session);
+    session = await auth();
+    // role = await getRole(session);
   // userId = session?.user?.id;
 
   if (!session?.user) return NextResponse.json({ error: 'Нужна авторизация' }, { status: 401 });

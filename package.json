@@ -28,5 +28,12 @@
     "eslint-config-next": "15.1.6",
     "prisma": "^6.4.1",
     "typescript": "^5"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

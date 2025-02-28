@@ -5,6 +5,7 @@ export default async function PageMenus() {
   const 
     session = await auth(),
     role = await getRole(session);
+    console.log('role',role);
   return <>
     <h1>Рецепты к рассчетом КБЖУ</h1>
     <GetMenus role={role} />

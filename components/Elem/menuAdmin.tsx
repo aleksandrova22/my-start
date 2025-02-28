@@ -33,11 +33,11 @@ export function MenuAdmin({ menuMeal, needReload }: { menuMeal: Menu[], needRelo
       <button type="submit">add</button>
     </form>
 
-    <ul className={classes.meal}>
+    {/* <ul className={classes.meal}>
       {menuMeal?.map(menuMeal => <li key={menuMeal.id}><p>{menuMeal.name}</p><p>КБЖУ:{menuMeal.energy}</p>
         <Image src={"/" + menuMeal?.photo} width={200} height={200} alt="Picture of the author" />
         <br /> Рецепт: <p>{menuMeal.Recipe}</p>
       </li>)}
-    </ul>
+    </ul> */}
   </>;
 }
