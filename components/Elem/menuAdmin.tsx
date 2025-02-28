@@ -2,7 +2,8 @@
 // import Image from 'next/image';
 // import classes from './meal-list.module.css';
 
-async function addMenu(event: Event, needReload: () => void)
+
+async function addMenu(event: React.FormEvent, needReload: () => void)
  {
   event.preventDefault();
   const
@@ -18,10 +19,13 @@ async function addMenu(event: Event, needReload: () => void)
   needReload();
 }
 
+
+
 export function MenuAdmin({needReload}: {needReload: () => void} ) {
+  
   return <>
     <h3>Добавить новое блюдо:</h3>
-    <form onSubmit={evt  => addMenu(evt, needReload)}>
+    <form onSubmit={(evt) => addMenu(evt, needReload)}>
       Название <input type="string" name="name" />
       <br />
       Калорийность <input type="number" name="energy" />
